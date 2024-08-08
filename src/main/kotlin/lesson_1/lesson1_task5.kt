@@ -2,12 +2,14 @@ package org.example.lesson_1
 
 fun main() {
     val timeInSpace = 6480
-    val minutesInSpace = timeInSpace/60
+    val minutesInSpace = timeInSpace / TIME
 
-    val minutes = timeInSpace / 60 - 60
-    val hours = minutesInSpace / 60
-    val seconds = minutes / 60
-    
-    println("Гагарин провел в космосе $hours:$minutes:0$seconds")
+    val minutes = timeInSpace / TIME - TIME
+    val hours = minutesInSpace / TIME
+    val seconds = minutes / TIME
+
+    println("Гагарин провел в космосе: %02d:%02d:%02d".format(hours,minutes,seconds))
 
 }
+const val TIME = 60
+
