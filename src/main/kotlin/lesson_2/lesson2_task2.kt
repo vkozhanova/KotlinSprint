@@ -14,5 +14,6 @@ fun main() {
 
     val medianSal = sumPayment / (workersCount + internCount)
     println("Средняя ЗП одного сотрудника после устройства стажеров: $medianSal")
+
 }
 
