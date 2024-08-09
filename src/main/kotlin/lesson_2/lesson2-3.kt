@@ -1,8 +1,9 @@
 package org.example.lesson_2
+
 fun main() {
-    val departureTime = (9 * TIME) + 39
+    val departureTime = 579
     val travelTime = 457
-    val arrivalTime = departureTime+travelTime
+    val arrivalTime = departureTime + travelTime
     val arrivalHour = arrivalTime / TIME
     val arrivalMinutes = arrivalTime - (arrivalHour * TIME)
 
