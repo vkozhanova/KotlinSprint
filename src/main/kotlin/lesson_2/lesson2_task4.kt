@@ -1,4 +1,5 @@
 package org.example.lesson_2
+
 fun main() {
     val cristal = 7f
     val iron = 11f
