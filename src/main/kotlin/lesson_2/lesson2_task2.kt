@@ -1,6 +1,5 @@
 package org.example.lesson_2
 fun main() {
-
     val workerSal = 30000
     val internSal = 20000
 
@@ -15,6 +14,5 @@ fun main() {
 
     val medianSal = sumPayment / (workersCount + internCount)
     println("Средняя ЗП одного сотрудника после устройства стажеров: $medianSal")
-
 }
 
