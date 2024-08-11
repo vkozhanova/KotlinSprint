@@ -1,6 +1,5 @@
 package org.example.lesson_2
 
-import kotlin.math.floor
 import kotlin.math.pow
 fun main() {
     val clientSum = 70000
