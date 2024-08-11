@@ -1,6 +1,5 @@
 package org.example.lesson_2
 fun main() {
-
     val workerSal = 30000
     val internSal = 20000
 
