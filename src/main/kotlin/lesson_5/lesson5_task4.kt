@@ -12,14 +12,11 @@ fun main() {
         val inputPassword = readLine()!!
         if (inputPassword == userPassword) {
             println("Добро пожаловать, $userName! Вы имеете доступ к управлению кораблем.")
-
         } else {
             println("Неверный пароль.")
         }
     } else {
         println("Пользователь не найден. Хотите зарегистрироваться? (да / нет)")
-
-
         val inputResp = readLine()!!
         if (inputResp == "да") {
             println("Регистрация завершена.")
