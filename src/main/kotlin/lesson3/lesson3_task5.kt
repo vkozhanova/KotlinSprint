@@ -3,10 +3,9 @@ package org.example.lesson3
 fun main() {
     val moveString = "D2-D4;0"
 
-    val (move, moveNum) = moveString.split(";")
-    val (from, to) = move.split("-")
+    val (from, separator, moveNum) = moveString.split(";", "-")
 
     println("Откуда: $from")
-    println("Куда: $to")
+    println("Куда: ${separator.substring(0, 2)}")
     println("Номер хода: $moveNum")
 }
