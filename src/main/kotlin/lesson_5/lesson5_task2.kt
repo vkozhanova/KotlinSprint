@@ -4,7 +4,8 @@ import java.time.LocalDate
 fun main() {
     println("Введите свой год рождения:")
 
-     val userYear = readLine()?.toIntOrNull() ?: 0
+     val userYear = readln().toIntOrNull() ?: 0
+
     val currentYear = LocalDate.now().year
     var resultAge = currentYear - userYear
 
