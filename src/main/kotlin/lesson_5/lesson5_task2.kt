@@ -9,7 +9,7 @@ fun main() {
     var resultAge = currentYear - userYear
 
     if ((resultAge <= AGE_OF_MAGORITY) || (userYear == 0)) {
-        println("Главный главный экран")
+        println("Показать главный экран")
     } else {
         println("Показать скрытый контент")
     }
