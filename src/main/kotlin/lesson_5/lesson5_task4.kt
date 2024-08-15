@@ -5,11 +5,11 @@ fun main() {
     val userPassword = "PanGalactic"
 
     println("Пожалуйста, введите ваше имя:")
-    val inputName = readLine()!!
+    val inputName = readln()
 
     if (inputName == "Zaphod") {
         println("Введите пароль:")
-        val inputPassword = readLine()!!
+        val inputPassword = readln()
         if (inputPassword == userPassword) {
             println("Добро пожаловать, $userName! Вы имеете доступ к управлению кораблем.")
         } else {
@@ -17,7 +17,7 @@ fun main() {
         }
     } else {
         println("Пользователь не найден. Хотите зарегистрироваться? (да / нет)")
-        val inputResp = readLine()!!
+        val inputResp = readln()
         if (inputResp == "да") {
             println("Регистрация завершена.")
         } else {
