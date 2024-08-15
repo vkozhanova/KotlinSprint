@@ -4,12 +4,12 @@ import java.util.Random
 fun main() {
     val random = Random()
     val secretNums = mutableListOf(random.nextInt(43), random.nextInt(43), random.nextInt(43))
-    var inputNums = mutableListOf<Int>()
+    val inputNums = mutableListOf<Int>()
 
     println("Введите три числа от 0 до 42:")
 
     for (i in 1..3) {
-        val nums = readLine()!!.toInt()
+        val nums = readln().toIntOrNull() ?: 0
         inputNums.add(nums)
     }
 
