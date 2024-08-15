@@ -1,9 +1,12 @@
 package org.example.lesson_5
-import java.util.Random
+
 
 fun main() {
-    val random = Random()
-    val secretNums = mutableListOf(random.nextInt(43), random.nextInt(43), random.nextInt(43))
+    val secretNums = mutableListOf<Int>()
+    for (i in 0..2) {
+        secretNums += (0..42).random()
+    }
+
     val inputNums = mutableListOf<Int>()
 
     println("Введите три числа от 0 до 42:")
