@@ -5,7 +5,7 @@ fun main() {
     val num2 = 3
     println("Для доступа к приложению подтвердите, что вы человек. Введите ответ $num1 + $num2 =")
 
-    val result = readlnOrNull()?.toIntOrNull()
+    val result = readln().toIntOrNull()
 
     if (result == (num1 + num2)) {
         println("Добро пожаловать!")
