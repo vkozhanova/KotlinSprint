@@ -13,16 +13,19 @@ fun main() {
     println("Сообщите о благоприятности метеоусловий (true/false):")
     val isWeatherAlright = readln().toBoolean()
 
-    val canGo = (!hasDamage && crew in REC_CREW && provision > REC_PROVISION && isWeatherAlright) ||
-            (!hasDamage && crew in REC_CREW && provision > REC_PROVISION) ||
-            (hasDamage && crew == REC_CREW.last && isWeatherAlright && provision >= REC_PROVISION)
+    if ((hasDamage == REC_HAS_DAMAGE && crew in REC_CREW_MIN..REC_CREW_MAX && provision > REC_PROVISION && isWeatherAlright == REC_WEATHER) ||
+        (hasDamage == REC_HAS_DAMAGE && crew in REC_CREW_MIN..REC_CREW_MAX && provision > REC_PROVISION) ||
+        (hasDamage != REC_HAS_DAMAGE && crew == REC_CREW_MAX && isWeatherAlright == REC_WEATHER && provision >= REC_PROVISION)) {
 
-    if (canGo) {
         println("Корабль может отправиться в плавание.")
     } else {
         println("Корабль не может отправиться в плавание.")
     }
 }
 
-val REC_CREW = 55..70
+const val REC_CREW_MIN = 55
+const val REC_CREW_MAX = 70
 const val REC_PROVISION = 50
+const val REC_WEATHER = true
+const val REC_HAS_DAMAGE = false
+
