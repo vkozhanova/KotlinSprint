@@ -2,16 +2,16 @@ package org.example.lesson_4
 
 fun main() {
     println("Сообщите о наличии повреждений корпуса (true/false):")
-    val hasDamage = readLine()?.toBoolean() ?: false
+    val hasDamage = readlnOrNull().toBoolean()
 
     println("Введите текущий состав экипажа:")
-    val crew = readLine()?.toIntOrNull() ?: 0
+    val crew = readlnOrNull()?.toIntOrNull() ?: 0
 
     println("Введите количество ящиков с провизией:")
-    val provision = readLine()?.toIntOrNull() ?: 0
+    val provision = readlnOrNull()?.toIntOrNull() ?: 0
 
     println("Сообщите о благоприятности метеоусловий (true/false):")
-    val isWeatherAlright = readLine()?.toBoolean() ?: false
+    val isWeatherAlright = readlnOrNull().toBoolean()
 
     val canGo = (!hasDamage && crew in REC_CREW && provision > REC_PROVISION && isWeatherAlright) ||
             (!hasDamage && crew in REC_CREW && provision > REC_PROVISION) ||
