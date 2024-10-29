@@ -11,5 +11,4 @@ fun main() {
 
     } while (userTime > 0)
     println("Прошло $inputTime сек.")
-
 }
