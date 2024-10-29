@@ -1,7 +1,6 @@
 package org.example.lesson_6
 
 import kotlin.random.Random
-
 fun main() {
 
     var tries = 5
