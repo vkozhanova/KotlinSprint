@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 fun main() {
     println("Задайте количество символов для пароля. Минимальная длина пароля - 6 символов.")
-    val passLength = readLine()!!.toInt()
+    val passLength = readln().toInt()
 
     if (passLength < 6) {
         println("Минимальная длина пароля - 6 символов.")
