@@ -2,7 +2,7 @@ package org.example.lesson_7
 
 fun main () {
     println("Введите количество секунд для отсчета:")
-    val userInput = readLine()?.toIntOrNull() ?: 0
+    val userInput = readln().toInt()
 
     for (i in userInput downTo 1) {
         println("Осталось $i секунд.")
