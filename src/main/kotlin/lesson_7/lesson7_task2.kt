@@ -7,9 +7,9 @@ fun main() {
     while (true) {
         println("Ваш код авторизации: $code")
         println("Введите код авторизации:")
-        val inputPass = readLine() ?: ""
+        val inputPass = readln().toIntOrNull()
 
-        if (inputPass.toIntOrNull() == code) {
+        if (inputPass == code) {
             println("Добро пожаловать!")
             break
         } else {
