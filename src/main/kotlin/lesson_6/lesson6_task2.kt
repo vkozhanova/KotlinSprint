@@ -2,13 +2,9 @@ package org.example.lesson_6
 
 fun main() {
     println("Введите отсчетное время в секундах.")
-    val inputTime = readLine()?.toInt()?: 0
-    var userTime = inputTime
+    val inputTime = readLine()?.toLongOrNull() ?: 0
 
-    do {
-        Thread.sleep(1000)
-        userTime--
+    Thread.sleep(inputTime * 1000)
 
-    } while (userTime > 0)
     println("Прошло $inputTime сек.")
 }
