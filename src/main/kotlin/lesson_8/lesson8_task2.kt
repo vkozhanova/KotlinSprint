@@ -12,11 +12,18 @@ fun main() {
         "масло растительное"
     )
     println("Какой ингредиент вы хотите найти?")
-    val inputIngredient = readln()
+    val userInput = readln()
 
-    if (ingredients.contains(inputIngredient)) {
-        println("Ингредиент $inputIngredient в рецепте есть.")
-    } else {
+    var ingFound = false
+
+    for (i in ingredients) {
+        if (userInput == i) {
+            println("Ингредиент $userInput в рецепте есть.")
+            ingFound = true
+            break
+        }
+    }
+    if (!ingFound) {
         println("Такого ингредиента в рецепте нет.")
     }
 }
