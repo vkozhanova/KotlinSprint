@@ -6,9 +6,7 @@ fun main() {
 
     val range = 0..number
 
-    for (i in range) {
-        if (i % 2 == 0) {
-            println(i)
-        }
+    for (i in range step 2) {
+        println(i)
     }
 }
