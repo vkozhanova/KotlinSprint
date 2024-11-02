@@ -14,28 +14,23 @@ fun main() {
 }
 
 fun generatePass(length: Int): String {
-
-    val numbers = (0..9).toList()
+    val numbers = ('0'..'9').toList()
     val lowerCaseChars = ('a'..'z').toList()
     val upperCaseChars = ('A'..'Z').toList()
-    val passBuilder = StringBuilder()
 
-    for (i in 0 until length) {
-        val randomCharIndex = Random.nextInt(3)
-        when (randomCharIndex) {
-            0 -> {
-                val randomNumber = numbers[Random.nextInt(numbers.size)]
-                passBuilder.append(randomNumber)
-            }
-            1 -> {
-                val randomLowerCaseChar = lowerCaseChars[Random.nextInt(lowerCaseChars.size)]
-                passBuilder.append(randomLowerCaseChar)
-            }
-            2 -> {
-                val randomUpperCaseChar = upperCaseChars[Random.nextInt(upperCaseChars.size)]
-                passBuilder.append(randomUpperCaseChar)
-            }
-        }
+    val passBuilder = mutableListOf<Char>()
+
+    passBuilder.add(numbers[Random.nextInt(numbers.size)])
+    passBuilder.add(lowerCaseChars[Random.nextInt(lowerCaseChars.size)])
+    passBuilder.add(upperCaseChars[Random.nextInt(upperCaseChars.size)])
+
+    val allChars = numbers + lowerCaseChars + upperCaseChars
+
+    for (i in 3 until length) {
+        val randomChar = allChars[Random.nextInt(allChars.size)]
+        passBuilder.add(randomChar)
     }
-    return passBuilder.toString()
+
+    passBuilder.shuffle()
+    return passBuilder.joinToString("")
 }
