@@ -11,21 +11,19 @@ fun main() {
         "масло сливочное",
         "масло растительное"
     )
-
     println(ingredients.joinToString())
+
     println("Какой ингредиент вы хотите заменить?")
     val inputIngredient = readln()
 
-    if (!ingredients.contains(inputIngredient)) {
+    val index = ingredients.indexOf(inputIngredient)
+
+    if (index == -1) {
         println("Такого ингредиента в списке нет.")
     } else {
         println("Какой ингредиент вы хотели бы добавить?")
         val replaceIngredient = readln()
-        ingredients[ingredients.indexOf(inputIngredient)] = replaceIngredient
+        ingredients[index] = replaceIngredient
         println("Готово! Вы сохранили следующий список: ${ingredients.joinToString()}")
     }
-
-
-
-
 }
