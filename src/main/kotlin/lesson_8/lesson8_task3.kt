@@ -14,7 +14,7 @@ fun main() {
     println("Какой ингредиент вы хотите найти?")
     val inputIngredient = readln()
 
-    if (ingredients.contains(inputIngredient)) {
+    if (inputIngredient in ingredients) {
         println("Ингредиент $inputIngredient в рецепте есть.")
     } else {
         println("Такого ингредиента в рецепте нет.")
