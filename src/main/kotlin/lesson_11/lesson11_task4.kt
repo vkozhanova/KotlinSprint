@@ -12,6 +12,7 @@ class Recipe (
     val name: String,
     val icon: String,
     val isFavorite: Boolean = false,
+    val ingredients: List<Ingredient>,
     val complexity: String,
     val vegan: Boolean,
     val gluten: Boolean,
