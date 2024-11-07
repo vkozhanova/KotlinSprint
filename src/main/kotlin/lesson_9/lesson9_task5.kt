@@ -2,17 +2,17 @@ package org.example.lesson_9
 
 fun main() {
 
-    val ingredientsList = mutableListOf<String>()
+    val ingredientsSet = mutableSetOf<String>()
     var count = 0
 
     while (count < 5) {
         println("Введите ингредиент ${count + 1}:")
         val userIngredient = readlnOrNull()?.trim() ?: ""
         if (userIngredient.isNotEmpty()) {
-            if (ingredientsList.contains(userIngredient)) {
+            if (ingredientsSet.contains(userIngredient)) {
                 println("Этот ингредиент уже есть в списке.")
             } else {
-                ingredientsList.add(userIngredient)
+                ingredientsSet.add(userIngredient)
                 count++
             }
         } else {
@@ -20,14 +20,10 @@ fun main() {
         }
     }
 
-    ingredientsList.sort()
-
-    val sortedList = ingredientsList.mapIndexed { index, ingredient ->
-        if (index == 0) ingredient.replaceFirstChar {
-            it.uppercase()
+    val formatedList = ingredientsSet.toList().sorted().mapIndexed { index, ingredient ->
+        if (index == 0) ingredient.replaceFirstChar{ it.uppercase()
         } else ingredient.lowercase()
     }
 
-    val resultList = sortedList.joinToString(", ")
-    println(resultList)
+    println(formatedList.joinToString(", "))
 }
