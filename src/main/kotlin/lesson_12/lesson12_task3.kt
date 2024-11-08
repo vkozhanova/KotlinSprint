@@ -1,6 +1,6 @@
 package org.example.lesson_12
 
-class WeatherRep(kelvinsDay: Int, kelvinsNight: Int) {
+class WeatherRep (kelvinsDay: Int, kelvinsNight: Int) {
 
     var dayTemperature: Int = kelvinsDay - KELVIN_FACTOR
     var nightTemperature: Int = kelvinsNight - KELVIN_FACTOR
