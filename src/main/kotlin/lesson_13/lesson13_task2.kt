@@ -4,7 +4,7 @@ class ContactInfo (val name: String, val number: Long, company: String? = null) 
 
     val company: String? = company
 
-    fun printComtactInfo() {
+    fun printContactInfo() {
 
         println("-Имя: $name")
         println("-Номер телефона: $number")
@@ -16,7 +16,7 @@ fun main() {
     val person1 = ContactInfo("Иван", 89345782100)
     val person2 = ContactInfo("Мария", 89236452173, "ИнтерТех")
 
-    person1.printComtactInfo()
+    person1.printContactInfo()
     println()
-    person2.printComtactInfo()
+    person2.printContactInfo()
 }
