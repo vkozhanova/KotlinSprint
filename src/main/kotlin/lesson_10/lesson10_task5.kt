@@ -13,7 +13,7 @@ fun main() {
     val token = authorize(inputLogin, inputPass)
     if (token != null) {
         println("Авторизация успешна!")
-        println("Ваша корзина: ${basket(token)}")
+        println("Ваша корзина: ${getBasket(token)}")
     } else {
         println("Неудачная авторизация!")
     }
@@ -35,18 +35,12 @@ fun authorize(inputLogin: String, inputPass: String): String? {
             token.append(randomChar)
         }
         return token.toString()
-    } else {
-        return null
     }
+    return null
 }
 
-fun basket(token: String?): List<String> {
+fun getBasket(token: String): List<String> {
     val goods = listOf("картина", "корзина", "картонка")
-
-    if (token.isNullOrBlank()) {
-        println("Неверный токен.")
-        return emptyList()
-    }
     return goods
 }
 
