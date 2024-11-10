@@ -1,6 +1,5 @@
 package org.example.lesson_10
 
-
 fun main() {
     println("Придумайте логин:")
     val login = readLine() ?: ""
@@ -8,13 +7,11 @@ fun main() {
     println("Придумайте пароль:")
     val password = readLine() ?: ""
 
-    if (validation(login) && validation(password)) {
+    if (isValid(login) && isValid(password)) {
         println("Добро пожаловать, $login!")
     } else {
         println("Логин или пароль недостаточно длинные. ")
     }
 }
 
-fun validation(input: String): Boolean {
-   return input.length >= 4
-}
+fun isValid (input: String) = input.length >= 4
