@@ -1,21 +1,18 @@
 package org.example.lesson_10
 
-import kotlin.random.Random
-
 fun main() {
    var playerWins = 0
     var anotherGame: String
 
     do {
-        val playerCast = cast("Игрок")
-        val compCast = cast("Компьютер")
+        val playerCast = throwDice("Игрок")
+        val compCast = throwDice("Компьютер")
 
         Thread.sleep(1000)
         when {
             playerCast > compCast -> { println("Победило человечество.")
             playerWins++
         }
-
             compCast > playerCast -> println("Победила машина.")
 
             else -> println("Победила дружба.")
@@ -27,8 +24,8 @@ fun main() {
     println("Вы выиграли $playerWins партий.")
 }
 
-fun cast(player: String): Int {
-    val castResult = Random.nextInt(1, 7)
+fun throwDice(player: String): Int {
+    val castResult = (1..6).random()
     println("$player бросает кубик...")
     Thread.sleep(1000)
     println("Результат: $castResult")
