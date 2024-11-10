@@ -1,10 +1,8 @@
 package org.example.lesson_10
 
-import kotlin.random.Random
-
 fun main() {
-    val playerCast = cast("Игрок")
-    val compCast = cast("Компьютер")
+    val playerCast = castDice("Игрок")
+    val compCast = castDice("Компьютер")
 
     Thread.sleep(1000)
     when {
@@ -16,8 +14,8 @@ fun main() {
     }
 }
 
-fun cast(player: String): Int {
-    val castResult = Random.nextInt(1, 7)
+fun castDice(player: String): Int {
+    val castResult = (1..6).random()
     println("$player бросает кубик...")
     Thread.sleep(1000)
     println("Результат: $castResult")
