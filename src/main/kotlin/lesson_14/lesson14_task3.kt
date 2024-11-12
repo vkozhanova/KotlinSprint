@@ -48,10 +48,10 @@ fun main() {
     figures.add(Rectangle("black", 7.0, 8.0))
 
     val blackPerimeterSum = figures.filter { it.color == "black" }.sumOf { it.perimeterCalculation() }
-        .also { println("Сумма периметров черных фигур: ${String.format("%.2f", it)}.") }
+        .also { println("Сумма периметров всех черных фигур: ${String.format("%.2f", it)}.") }
 
     val whiteAreaSum = figures.filter { it.color == "white" }.sumOf { it.areaCalculation() }
-        .also { println("Сумма площадей всехбелых фигур: ${String.format("%.2f", it)}.") }
+        .also { println("Сумма площадей всех белых фигур: ${String.format("%.2f", it)}.") }
 
 }
 
