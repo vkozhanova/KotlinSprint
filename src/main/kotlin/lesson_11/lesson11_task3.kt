@@ -16,7 +16,7 @@ class Room(
         println("${user.login} присоединился к беседе $title.")
     }
 
-    fun newState(login: String, newState: String) {
+    fun getNewState(login: String, newState: String) {
         val user = participants.find { it.login == login }
         if (user != null) {
             user.state = newState
@@ -26,7 +26,7 @@ class Room(
         }
     }
 
-    fun roomInfo() {
+    fun getRoomInfo() {
         println("Комната: $title")
         println("Обложка: $cover")
         println("Участники: ")
@@ -47,5 +47,5 @@ fun main() {
     room1.addUser(User(login = "user_2", icon = "example2.jpeg", state = "разговаривает"))
     room1.addUser(User(login = "user_3", icon = "example3.jpeg", state = "микрофон выключен"))
 
-    room1.roomInfo()
+    room1.getRoomInfo()
 }
