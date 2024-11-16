@@ -1,5 +1,6 @@
 package org.example.lesson_5
 
+const val FACTOR = 100.0
 fun main() {
     println("Введите ваш вес, кг:")
     val weight = readln().toDouble()
@@ -7,7 +8,7 @@ fun main() {
     println("Введите ваш рост, см:")
     val height = readln().toDouble()
 
-    val bmi = (weight * FACTOR) / ((height * FACTOR).let { it * it })
+    val bmi = weight / ((height / FACTOR).let { it * it })
 
     val result = ("Ваш ИМТ равен: ${String.format("%.2f", bmi)}")
 
@@ -20,5 +21,3 @@ fun main() {
     println(result)
     println(category)
 }
-
-const val FACTOR = 100
