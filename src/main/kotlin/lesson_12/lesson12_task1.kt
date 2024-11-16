@@ -1,10 +1,10 @@
 package org.example.lesson_12
 
-class WeatherReport(
-    var dayTemperature: Int = 10,
-    var nightTemperature: Int = 2,
-    var isPrecipitation: Boolean = false,
-) {
+class WeatherReport {
+    var dayTemperature: Int = 10
+    var nightTemperature: Int = 2
+    var isPrecipitation: Boolean = false
+
     fun printWeatherReport() {
         println("Дневная температура: $dayTemperature, Ночная температура: $nightTemperature, Наличие осадков: $isPrecipitation")
     }
