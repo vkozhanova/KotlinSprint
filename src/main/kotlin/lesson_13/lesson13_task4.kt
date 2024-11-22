@@ -1,19 +1,36 @@
 package org.example.lesson_13
 
-class Contacts(val name: String, val number: Long, val company: String? = null)
+class PersonalContacts(val name: String, val number: Long?, val company: String? = null){
+    fun displayContact() {
+        println("Имя: $name, Номер телефона: $number, Компания: $company")
+    }
+}
 
 fun main() {
-    val contactList = mutableListOf<Contacts>()
+    val contacts = mutableListOf<PersonalContacts>()
 
-    val person1 = Contacts("Иван", 89345782100)
-    val person2 = Contacts("Мария", 89236452173, "ИнтерТех")
-    val person3 = Contacts("Елена", 67954356772)
-    val person4 = Contacts("Евгений", 45387624512, "ООО Агротек")
-    val person5 = Contacts("Антон", 56389752375, "null")
+    while (true) {
+        println("Введите имя контакта (или 'exit' для выхода):")
+        val name = readLine() ?: continue
+        if (name.lowercase() == "exit") break
 
-    contactList.addAll(mutableListOf(person1, person2, person3, person4, person5))
+        println("Введите номер телефона:")
+        val inputNumber = readln().toLongOrNull()
 
-    val allCompanies = contactList.mapNotNull { it.company }
+        if (inputNumber == null) {
+            println("Номер телефона отсутствует. Контакт не добавлен.")
+            continue
+        }
 
-    println(allCompanies)
+        println("Введите название компании (или оставьте поле пустым):")
+        val company = readln().takeIf { it.isNotBlank() }
+
+        val contact = PersonalContacts(name, inputNumber, company)
+        contacts.add(contact)
+    }
+
+    println("Список контактов:")
+    for (contact in contacts) {
+        contact.displayContact()
+    }
 }
