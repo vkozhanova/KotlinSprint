@@ -6,7 +6,7 @@ open class Liner(
     val passengerCapacity: Int = 200,
 ) {
     open fun printInfo() {
-        println("Корабль класса Лайнер, имя: $name, скорость: $speed, вместимость: $passengerCapacity.")
+        println("Корабль, Имя: $name, Скорость: $speed, Вместимость: $passengerCapacity.")
     }
 
     open fun loading() {
@@ -22,11 +22,8 @@ class CargoShip(
     val cargoCapacity: Int = 1000,
 ) : Liner(name, speed, passengerCapacity) {
     override fun printInfo() {
-        println(
-            "Корабль класса Грузовой, имя: $name, скорость: $speed," +
-                    " вместимость: $passengerCapacity," +
-                    " грузоводъемность: $cargoCapacity."
-        )
+       super.printInfo()
+        println("Грузоподъемность: $cargoCapacity.")
     }
 
     override fun loading() {
@@ -45,11 +42,11 @@ class Icebreaker(
 
 ) : Liner(name, speed, passengerCapacity) {
     override fun printInfo() {
+        super.printInfo()
         println(
-            "Корабль класса Ледокол, имя: $name, скорость: $speed," +
-                    " вместимость: $passengerCapacity, возможность колоть лед: $isIcebreaking," +
-                    " ледовый класс: $iceClass," +
-                    " наличие атомной энергетической установки: $isAtomic."
+            "Возможность колоть лед: $isIcebreaking," +
+                    " Ледовый класс: $iceClass," +
+                    " Наличие атомной энергетической установки: $isAtomic."
         )
     }
 
