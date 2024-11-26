@@ -1,9 +1,9 @@
 package org.example.lesson_14
 
 open class Liner(
-    val name: String = "",
-    val speed: Int = 40,
-    val passengerCapacity: Int = 200,
+    open val name: String,
+    open val speed: Int = 40,
+    open val passengerCapacity: Int = 200,
 ) {
     open fun printInfo() {
         println("Корабль класса Лайнер, имя: $name, скорость: $speed, вместимость: $passengerCapacity.")
@@ -11,7 +11,7 @@ open class Liner(
 }
 
 class CargoShip(
-    name: String = "",
+    name: String,
     speed: Int = 30,
     passengerCapacity: Int = 150,
     val cargoCapacity: Int = 1000,
@@ -26,12 +26,12 @@ class CargoShip(
 }
 
 class Icebreaker(
-    name: String = "",
+    name: String,
     speed: Int = 15,
     passengerCapacity: Int = 30,
     val isIcebreaking: Boolean = true,
-    val iceClass: String = "",
-    val isAtomic: Boolean = true
+    val iceClass: String = "Arc5",
+    val isAtomic: Boolean = false
 
 ) : Liner(name, speed, passengerCapacity) {
     override fun printInfo() {
@@ -45,9 +45,9 @@ class Icebreaker(
 }
 
 fun main() {
-    val liner = Liner("First", 40, 200)
-    val cargoShip = CargoShip("Second", 30, 150, 1000)
-    val icebreaker = Icebreaker("Third", 15, 30, true, "Arc5", false)
+    val liner = Liner("First")
+    val cargoShip = CargoShip("Second")
+    val icebreaker = Icebreaker("Third")
 
     liner.printInfo()
     cargoShip.printInfo()
