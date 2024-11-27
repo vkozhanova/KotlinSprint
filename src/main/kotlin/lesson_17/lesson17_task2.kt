@@ -1,5 +1,4 @@
 package org.example.lesson_17
-
 class Ship(
     private val _name: String,
     var averageSpeed: Double,
