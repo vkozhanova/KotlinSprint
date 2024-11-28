@@ -1,5 +1,4 @@
 package org.example.lesson_17
-
 class  Folder(
     private val _name: String,
     private var _filesCount: Int,
