@@ -15,6 +15,10 @@ class Ship(
         homePort = newHomePort
     }
 
+    fun changeName(newName: String) {
+        println("Имя корабля изменять нельзя.")
+    }
+
     override fun toString(): String {
         return "Корабль $name, средняя скорость: $averageSpeed, порт приписки: $homePort"
     }
@@ -29,6 +33,6 @@ fun main() {
     ship.changeAverageSpeed(23.4)
     println(ship)
 
-    ship.name = "Мурманск"
+    ship.changeName("Ship2")
     println(ship.name)
 }
