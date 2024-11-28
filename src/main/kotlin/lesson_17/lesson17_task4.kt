@@ -1,5 +1,4 @@
 package org.example.lesson_17
-
 class Package(val trackingNumber: String) {
 
     private var _currentLocation: String = "На складе"
