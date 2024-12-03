@@ -16,12 +16,26 @@ class PrecipitationAmount(val amount: Double) : WeatherStationStats() {
     }
 }
 
-class  WeatherServer {
-        fun sendInfo(weatherInfo: WeatherStationStats){
-            println("Отправка данных на сервер...")
-            println(weatherInfo.getInfo())
+class WeatherServer {
+    fun sendInfo(weatherInfo: WeatherStationStats) {
+        println("Отправка данных на сервер...")
+
+        when (weatherInfo) {
+            is Temperature -> {
+                println("Отправляем данные о температуре.")
+            }
+
+            is PrecipitationAmount -> {
+                println("Отправляем данные о количестве осадков.")
+            }
+
+            else -> {
+                println("Неизвестный тип данных.")
+            }
         }
+        println(weatherInfo.getInfo())
     }
+}
 
 fun main() {
     val temperature = Temperature(6.0)
