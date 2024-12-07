@@ -23,7 +23,7 @@ class Player(
         if (health > 0) {
             health -= damage
             println("Игрок $name получил $damage урона. Осталось здоровья: $health.")
-            if (health < 0) {
+            if (health <= 0) {
                 die()
             }
         } else {
@@ -44,9 +44,6 @@ class Player(
 fun main() {
     val player = Player("Player1", 10, 1)
 
-    player.takeDamage(2)
-    player.getHeal(1)
     player.takeDamage(10)
-    player.takeDamage(2)
     player.getHeal(1)
 }
