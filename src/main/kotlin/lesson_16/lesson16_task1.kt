@@ -1,9 +1,7 @@
 package org.example.lesson_16
 
-import kotlin.random.Random
-
 class Dice(
-   private val number: Int = Random.nextInt(1,7)
+    private val number: Int = (1..6).random()
 ) {
     fun printNumber() {
         println(number)
@@ -11,6 +9,6 @@ class Dice(
 }
 
 fun main() {
-val dice = Dice()
+    val dice = Dice()
     dice.printNumber()
 }
