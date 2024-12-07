@@ -1,16 +1,20 @@
 package org.example.lesson_16
 
+import kotlin.math.pow
+
 class Circle(
     private val radius: Double = 0.0,
 ) {
-    private val factor: Double = 3.14
+    companion object {
+        private const val PI: Double = 3.14
+    }
 
     fun getCircumference(): Double {
-        return (radius * 2) * factor
+        return (radius * 2) * PI
     }
 
     fun getCircleArea(): Double {
-        return radius * radius * factor
+        return radius.pow(2) * PI
     }
 }
 
