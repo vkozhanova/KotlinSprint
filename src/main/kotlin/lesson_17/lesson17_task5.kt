@@ -1,8 +1,8 @@
 package org.example.lesson_17
 
 class User(
-    private var _login: String,
-    private val _password: String,
+    var _login: String,
+    val _password: String,
 ) {
     var login: String
         get() = _login
