@@ -1,11 +1,14 @@
 package org.example.lesson_17
 class Ship(
-    private val _name: String,
+    val name: String,
     var averageSpeed: Double,
     var homePort: String,
 ) {
-    val name: String
-        get() = _name
+    var nameSetter: String = name
+        set(value) {
+            println("Имя корабля изменить нельзя.")
+            field = value
+        }
 
     fun changeAverageSpeed(newSpeed: Double) {
         averageSpeed = newSpeed
@@ -13,10 +16,6 @@ class Ship(
 
     fun changeHomePort(newHomePort: String) {
         homePort = newHomePort
-    }
-
-    fun changeName(newName: String) {
-        println("Имя корабля изменять нельзя.")
     }
 
     override fun toString(): String {
@@ -33,6 +32,6 @@ fun main() {
     ship.changeAverageSpeed(23.4)
     println(ship)
 
-    ship.changeName("Ship2")
+    ship.nameSetter = "Ship2"
     println(ship.name)
 }
