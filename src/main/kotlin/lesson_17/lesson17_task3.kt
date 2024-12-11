@@ -1,11 +1,16 @@
 package org.example.lesson_17
 class  Folder(
-    private val _name: String,
+    private var _name: String,
     private var _filesCount: Int,
     private var _isSecret: Boolean,
 ) {
-    val name: String
+    var name: String
         get() = if (_isSecret) "Скрытая папка" else _name
+        private set(value) {
+            if (!_isSecret) {
+                _name = value
+            }
+        }
 
     val filesCount: Int
         get() = if (_isSecret) 0 else _filesCount
