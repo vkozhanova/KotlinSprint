@@ -1,13 +1,12 @@
 package org.example.lesson_17
 class Ship(
-    val name: String,
+    val _name: String,
     var averageSpeed: Double,
     var homePort: String,
 ) {
-    var nameSetter: String = name
+    var name: String = _name
         set(value) {
             println("Имя корабля изменить нельзя.")
-            field = value
         }
 
     fun changeAverageSpeed(newSpeed: Double) {
@@ -32,6 +31,6 @@ fun main() {
     ship.changeAverageSpeed(23.4)
     println(ship)
 
-    ship.nameSetter = "Ship2"
+    ship.name = "Ship2"
     println(ship.name)
 }
