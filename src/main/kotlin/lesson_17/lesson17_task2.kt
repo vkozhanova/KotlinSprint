@@ -1,10 +1,11 @@
 package org.example.lesson_17
 class Ship(
-    val _name: String,
+    var _name: String,
     var averageSpeed: Double,
     var homePort: String,
 ) {
-    var name: String = _name
+    var name: String
+        get() = _name
         set(value) {
             println("Имя корабля изменить нельзя.")
         }
