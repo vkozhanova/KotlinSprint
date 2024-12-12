@@ -4,8 +4,7 @@ class Ship(
     var averageSpeed: Double,
     var homePort: String,
 ) {
-    var name: String
-        get() = _name
+    var name: String = _name
         set(value) {
             println("Имя корабля изменить нельзя.")
         }
