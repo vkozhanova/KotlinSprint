@@ -6,6 +6,7 @@ class Ship(_name: String) {
     var homePort: String = " "
 
     var name: String = _name
+        get() = field
         set(value) {
             println("Имя корабля изменить нельзя.")
         }
