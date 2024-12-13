@@ -1,25 +1,25 @@
 package org.example.lesson_17
-class Package(val trackingNumber: String) {
+class Package(_trackingNumber: String, _location: String) {
 
-    private var _location: String = "На складе"
-    private var _movementCount: Int = 0
+    var movementCount: Int = 1
 
-    var location: String
-        get() = _location
+    val trackingNumber: String = _trackingNumber
+        get() = field
+
+    var location: String = _location
         set(value) {
-            _location = value
-            _movementCount++
+            field = value
+            movementCount++
         }
-
-    val movementCount: Int
-        get() = _movementCount
+    override fun toString(): String {
+        return "Номер посылки: $trackingNumber, текущее местоположение: $location, счетчик перемещений: $movementCount"
+    }
 }
 
 fun main() {
-    val package1 = Package("12AB13")
-    println("Номер посылки: ${package1.trackingNumber}, текущее местоположение: ${package1.location}, счетчик перемещений: ${package1.movementCount}")
+    val package1 = Package("12AB13", "На складе")
+    println(package1.toString())
 
-    package1.location = "Пункт отбработки1"
     package1.location = "Пункт сортировки"
-    println("Номер посылки: ${package1.trackingNumber}, текущее местоположение: ${package1.location}, счетчик перемещений: ${package1.movementCount}")
+    println(package1.toString())
 }
