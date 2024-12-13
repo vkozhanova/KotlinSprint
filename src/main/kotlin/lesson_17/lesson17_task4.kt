@@ -7,6 +7,7 @@ class Package(_trackingNumber: String, _location: String) {
         get() = field
 
     var location: String = _location
+        get() = field
         set(value) {
             field = value
             movementCount++
