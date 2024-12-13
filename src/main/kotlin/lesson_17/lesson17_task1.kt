@@ -1,9 +1,7 @@
 package org.example.lesson_17
 
-class Quiz(
-    private val _question: String,
-    var _answer: String,
-) {
+class Quiz(_question: String, _answer: String) {
+
     val question: String = _question
 
     var answer: String = _answer
