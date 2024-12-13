@@ -1,19 +1,17 @@
 package org.example.lesson_17
 
-class User(
-    var _login: String,
-    val _password: String,
-) {
-    var login: String
-        get() = _login
+class User(_login: String, _password: String) {
+
+    var login: String = _login
+        get() = field
         set(value) {
-            _login = value
+            field = value
             println("Логин успешно изменен на $value.")
         }
 
-    var password: String
+    var password: String = _password
         get() {
-            return "*".repeat(_password.length)
+            return "*".repeat(field.length)
         }
         set(value) {
             println("Вы не можете изменить пароль.")
@@ -28,4 +26,5 @@ fun main() {
 
     println("Ваш текущий пароль: ${user.password}")
     user.password = "23ER32"
+    println(user.password)
 }
