@@ -1,7 +1,7 @@
 package org.example.lesson_17
 class Package(_trackingNumber: String, _location: String) {
 
-    var movementCount: Int = 1
+    var movementCount: Int = 0
 
     val trackingNumber: String = _trackingNumber
         get() = field
