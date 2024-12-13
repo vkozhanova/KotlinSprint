@@ -1,9 +1,10 @@
 package org.example.lesson_17
-class Ship(
-    var _name: String,
-    var averageSpeed: Double,
-    var homePort: String,
-) {
+
+class Ship(_name: String) {
+
+    var averageSpeed: Double = 0.0
+    var homePort: String = " "
+
     var name: String = _name
         set(value) {
             println("Имя корабля изменить нельзя.")
@@ -24,11 +25,9 @@ class Ship(
 
 fun main() {
 
-    val ship = Ship("Ship1", 21.0, "Архангельск")
-    println(ship)
-
-    ship.changeHomePort("Санкт-Петербург")
-    ship.changeAverageSpeed(23.4)
+    val ship = Ship("Ship1")
+    ship.changeAverageSpeed(21.0)
+    ship.changeHomePort("Мурманск")
     println(ship)
 
     ship.name = "Ship2"
