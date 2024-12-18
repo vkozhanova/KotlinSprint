@@ -1,12 +1,12 @@
 package org.example.lesson_22
 
 class RegularBook(
-    val name: String,
+    val title: String,
     val author: String,
 )
 
 data class DataBook(
-    val name: String,
+    val title: String,
     val author: String,
 )
 
