@@ -1,12 +1,10 @@
 package org.example.lesson_18
 
-import kotlin.random.Random
-
 open class Die(
     private val sides: Int,
 ) {
     open fun roll() {
-        val result = Random.nextInt(1, sides + 1)
+        val result = (1..sides + 1).random()
         println("Кость с количеством граней $sides дала результат $result.")
     }
 }
