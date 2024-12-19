@@ -9,17 +9,17 @@ class MainScreenViewModel {
     var mainScreenState = MainScreenState()
 
     fun loadData() {
-        mainScreenState = mainScreenState.copy(isLoading = false)
-        println("Состояние: отсутствие данных.")
+        mainScreenState = mainScreenState.copy(data = "Состояние: отсутствие данных.", isLoading = false)
+        println(mainScreenState.data)
         Thread.sleep(1000)
 
-        mainScreenState = mainScreenState.copy(isLoading = true)
-        println("Состояние: загрузка данных...")
+        mainScreenState = mainScreenState.copy(data = "Состояние: загрузка данных...", isLoading = true)
+        println(mainScreenState.data)
         Thread.sleep(2000)
 
-        val loadedData = "Данные загружены с сервера."
-        mainScreenState = mainScreenState.copy(data = loadedData, isLoading = false)
-        println("Состояние: $loadedData")
+
+        mainScreenState = mainScreenState.copy(data = "Данные загружены с сервера.", isLoading = false)
+        println(mainScreenState.data)
     }
 }
 
