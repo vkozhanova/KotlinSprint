@@ -1,32 +1,42 @@
 package org.example.lesson_18
 
-open class Animal(
+abstract class Animal(
     val name: String,
     val diet: String,
 ) {
-    open fun sleeping() {
+    open fun sleep() {
         println("$name -> спит.")
     }
-    open fun feeding() {
-        println("$name -> ест $diet.")
-    }
+
+    abstract fun feed()
 }
 
 class Fox(
     name: String = "",
     diet: String = "ягоды"
-): Animal(name, diet)
+): Animal(name, diet) {
+
+    override fun feed() {
+        println("$name -> ест $diet.")
+    }
+}
 
 class Dog(
     name: String = "",
     diet: String = "кости"
-): Animal(name, diet)
+): Animal(name, diet) {
+
+    override fun feed() {
+        println("$name -> ест $diet.")
+    }
+}
 
 class Cat(
     name: String = "",
     diet: String = "рыба"
 ): Animal(name, diet) {
-    override fun feeding() {
+
+    override fun feed() {
         println("$name -> ест рыбу.")
     }
 }
@@ -38,6 +48,6 @@ fun main() {
 
     val animalsList: List<Animal> = listOf(fox, dog, cat)
     for (i in animalsList) {
-        i.feeding()
+        i.feed()
     }
 }
