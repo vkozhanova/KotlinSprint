@@ -1,47 +1,47 @@
 package org.example.lesson_18
 
-open class Screen {
+abstract class Screen {
 
-    open fun draw(x: Int, y: Int): String {
-        return ""
-    }
+    abstract fun draw(x: Int, y: Int): String
 
-    open fun draw(x: Float, y: Float): String {
-        return ""
-    }
+    abstract fun draw(x: Float, y: Float): String
 }
 
 class Circle : Screen() {
+
     override fun draw(x: Int, y: Int): String {
-        return "Нарисован круг с кординатами $x и $y."
+        return "Нарисован круг с координатами $x и $y."
     }
 
     override fun draw(x: Float, y: Float): String {
-        return "Нарисован круг с кординатами $x и $y."
+        return "Нарисован круг с координатами $x и $y."
     }
 }
 
 class Square : Screen() {
+
     override fun draw(x: Int, y: Int): String {
-        return "Нарисован квадрат с кординатами $x и $y."
+        return "Нарисован квадрат с координатами $x и $y."
     }
 
     override fun draw(x: Float, y: Float): String {
-        return "Нарисован квадрат с кординатами $x и $y."
+        return "Нарисован квадрат с координатами $x и $y."
     }
 }
 
 class Point : Screen() {
+
     override fun draw(x: Int, y: Int): String {
-        return "Нарисована точка с кординатами $x и $y."
+        return "Нарисована точка с координатами $x и $y."
     }
 
     override fun draw(x: Float, y: Float): String {
-        return "Нарисована точка с кординатами $x и $y."
+        return "Нарисована точка с координатами $x и $y."
     }
 }
 
 fun main() {
+
     val circle = Circle()
     val square = Square()
     val point = Point()
