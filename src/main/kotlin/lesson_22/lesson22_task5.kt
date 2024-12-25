@@ -12,11 +12,11 @@ data class GalacticGuide(
 
 fun main() {
     val alphaCentauri = GalacticGuide(
-        name = "Alpha Centauri",
-        description = "Ближайшая звездная система к Земле, состоящая из " +
+        "Alpha Centauri",
+        "Ближайшая звездная система к Земле, состоящая из " +
                 "трех звезд: Alpha Centauri A, Alpha Centauri B и Proxima Centauri.",
-        dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")).toString(),
-        distanceFromEarth = 4.367,
+        LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")).toString(),
+         4.367,
     )
 
     val (name, description, dateTime, distanceFromEarth) = alphaCentauri
